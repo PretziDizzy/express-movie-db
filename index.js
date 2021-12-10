@@ -6,7 +6,9 @@ const { Movie } = require('./models/Movie');
 
 
 Movie.hasMany(Cast)
+Cast.belongsTo(Movie)
+
 Movie.hasMany(Crew)
+Crew.belongsTo(Movie)
 
 module.exports = {Cast, Crew, Movie, sequelize}
-

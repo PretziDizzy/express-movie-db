@@ -1,4 +1,5 @@
 const {sequelize} = require('./db')
+const {Cast, Crew, Movie } = require('./index')
 
 // const seed = async() => {
 //     try {
@@ -10,7 +11,7 @@ const {sequelize} = require('./db')
 // }
 // return seed();
 
-const {Cast, Crew, Movie } = require('./index')
+
 
 seedCast = [
     {
@@ -18,41 +19,13 @@ seedCast = [
     characterName: 'Evelyn Abbott',
     placeOfOrigin:'UK'
     },
-    {
-    castName: 'Ryan Reynolds',
-    characterName: 'Nolan Booth',
-    placeOfOrigin:'Canada'
-    }
+    
 ]
 seedCrew = [
-    {
-    crewName: 'Henry Gayden',
-    role: 'Screenplay',
-    workEx: 14,
-    isOnsite: false,
-    },
-    {
-    crewName: 'Dwayne Johnson',
-    role: 'Producer',
-    workEx: 23,
-    isOnsite: true,
-    }
+    
 ]
 const seedMovie = [
-    {
-        title: 'Shazam',
-        runningTime: 132,
-        genre: 'Superhero',
-        MPAA_rating: 'PG-13',
-        IMDB_rating: 7.0,
-    },
-    {
-        title: 'Red Notice',
-        runningTime: 118,
-        genre: 'Action',
-        MPAA_rating: 'PG-13',
-        IMDB_rating: 6.4,
-    }
+    
 ]
 
 
