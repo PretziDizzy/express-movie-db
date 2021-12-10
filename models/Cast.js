@@ -3,7 +3,7 @@ const {sequelize, DataTypes, Model} = require('../db')
 class Cast extends Model {}
 
 Cast.init({
-    name: DataTypes.STRING,
+    castName: DataTypes.STRING,
     characterName: DataTypes.STRING,
     placeOfOrigin: DataTypes.STRING,
 },

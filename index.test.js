@@ -6,24 +6,57 @@ describe('Movie Database', () => {
     beforeAll(async () => {
         await sequelize.sync({force: true})
 
-        // await Cast.create
+
         const cast1 = [
-        {
-        name: 'Emily Blunt',
-        characterName: 'Evelyn Abbott',
-        placeOfOrigin:'UK'
-        }
+            {
+            castName: "Zendaya",
+            characterName: "MJ",
+            placeOfOrigin:"California"
+            }
+        ]
+
+        const crew1 = [
+            {
+                crewName: "John Kra",
+                role: "Director",
+                workEx: 22,
+                isOnsite: true
+            }
+        ]
+
+        const movie1 = [
+            {
+            title: 'Venom',
+            runningTime: 112,
+            genre: 'Action',
+            MPAA_rating: "PG-13",
+            IMDB_rating: 6.7,
+            }
     ]
 
         await Cast.create(cast1[0])
+        await Crew.create(crew1[0])
+        await Movie.create(movie1[0])
         
     })
 
-    test('cast has a name', async() => {
-    const testCast = await Cast.findOne({where: {name: "Emily Blunt"}});
-    expect (testCast.name).toBe("Emily Blunt")
-    })
+    test("what's the cast's name", async() => {
+        const testcast = await Cast.findOne({where: {castName: "Zendaya"}});
+        expect(testcast.castName).toBe('Zendaya')
+        })
     
+    test("the crew's role", async() => {
+        const testcrew = await Crew.findOne({where: {role: "Director"}});
+        expect(testcrew.role).toBe('Director')
+        })
+
+    test('what genre is the movie', async() => {
+        const testmovie = await Movie.findOne({where: {genre: "Action"}});
+        expect(testmovie.genre).toBe('Action')
+        })
+
+        
+
     afterAll(async()=> {
         sequelize.close()
     })

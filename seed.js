@@ -14,42 +14,42 @@ const {Cast, Crew, Movie } = require('./index')
 
 seedCast = [
     {
-    name: 'Emily Blunt',
+    castName: 'Emily Blunt',
     characterName: 'Evelyn Abbott',
     placeOfOrigin:'UK'
     },
     {
-    name: 'Ryan Reynolds',
+    castName: 'Ryan Reynolds',
     characterName: 'Nolan Booth',
     placeOfOrigin:'Canada'
     }
 ]
 seedCrew = [
     {
-    name: 'John Krasinski',
-    role: 'Director',
-    workEx: 22,
-    isOnsite: true,
+    crewName: 'Henry Gayden',
+    role: 'Screenplay',
+    workEx: 14,
+    isOnsite: false,
     },
     {
-    name: 'Dwayne Johnson',
+    crewName: 'Dwayne Johnson',
     role: 'Producer',
     workEx: 23,
-    isOnsite: false,
+    isOnsite: true,
     }
 ]
 const seedMovie = [
     {
-        title: 'A Quiet Place',
-        runningTime: 90,
-        genre: 'Horror',
+        title: 'Shazam',
+        runningTime: 132,
+        genre: 'Superhero',
         MPAA_rating: 'PG-13',
-        IMDB_rating: 7.5,
+        IMDB_rating: 7.0,
     },
     {
         title: 'Red Notice',
         runningTime: 118,
-        genre: 'Action Comedy',
+        genre: 'Action',
         MPAA_rating: 'PG-13',
         IMDB_rating: 6.4,
     }

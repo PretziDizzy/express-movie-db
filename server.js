@@ -7,6 +7,7 @@ const { Cast, Crew, Movie } = require('./index')
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json());
 
 // app.get("/now", (request, response) => {
 //     const date = new Date();
@@ -22,11 +23,22 @@ app.use(express.static(path.join(__dirname, 'public')))
         res.json(mycrew);
     })
 
-    // app.get('./casting/:id', async (req,res) => {
-    //     const mycast = await Cast.findByPk(req.params.id)
+    app.get('/cast/:id', async (req,res) => {
+        const thecast = await Cast.findByPk(req.params.id)
+        console.log(req)
+
+        res.json(thecast)
+    })
+
+    // app.get('/casts/:castName', async (req,res) => {
+    //     const mycast = await Cast.findOne({where: {castName: req.params.name }})
     //     console.log(req)
+        
     //     res.json(mycast)
+        
     // })
+
+
 
 
 
